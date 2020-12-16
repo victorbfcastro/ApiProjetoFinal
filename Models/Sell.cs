@@ -17,6 +17,7 @@ namespace ApiProjetoFinal.Models
         public Product Product { get; set; }
 
         [Required(ErrorMessage = "Este campo é obrigatório")]
+        [Range(1, int.MaxValue, ErrorMessage = "Funcionário Inválido")]
         public int EmployeeId { get; set; }
         public Employee Employee { get; set; }
 
