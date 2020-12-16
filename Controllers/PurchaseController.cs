@@ -38,12 +38,12 @@ namespace ApiProjetoFinal.Controllers
             [FromBody] Stock model
         )
         {
-            var estoqueToUpdate = await context.Stocks
+            var stockToUpdate = await context.Stocks
             .FirstOrDefaultAsync(x => x.Id == id);
             
-            estoqueToUpdate.Quantity += model.Quantity;
+            stockToUpdate.Quantity += model.Quantity;
             await context.SaveChangesAsync();
-            return estoqueToUpdate;
+            return stockToUpdate;
         }
     }
 }

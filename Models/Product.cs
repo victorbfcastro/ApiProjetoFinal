@@ -23,7 +23,12 @@ namespace ApiProjetoFinal.Models
 
         public int CategoryId { get; set; }
         public Category Category { get; set; }
+        
+        [Required(ErrorMessage = "Este campo é obrigatório")]
+        [Range(1, int.MaxValue, ErrorMessage = "Fornecedor inválido")]
 
+        public int ProviderId { get; set; }
+        public Provider Provider { get; set; }
         
     }
 }

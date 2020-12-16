@@ -16,6 +16,7 @@ namespace RestauranteApi.Controllers
         public async Task<ActionResult<List<Stock>>> Get([FromServices] DataContext context)
         {
             var stocks = await context.Stocks.Include(x => x.Product.Category).ToListAsync();
+            stocks = await context.Stocks.Include(x => x.Product.Provider).ToListAsync();
             return stocks;
         }
  
